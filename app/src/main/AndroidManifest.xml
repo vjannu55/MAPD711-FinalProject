@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:name=".utils.AppController"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/doctorpatient"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/doctorpatient"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CodesCafe"
+        tools:targetApi="31">
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShowLocation"
+            android:exported="false" />
+        <activity
+            android:name=".map.SelectLocation"
+            android:exported="false" />
+        <activity
+            android:name=".PatientAppointmentView"
+            android:exported="false" />
+        <activity
+            android:name=".PatientAppointments"
+            android:exported="false" />
+        <activity
+            android:name=".Doctor.DocAppointmentView"
+            android:exported="false" />
+        <activity
+            android:name=".adapters.AdapterAppointments"
+            android:exported="false" />
+        <activity
+            android:name=".Doctor.EditDoctorProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Doctor.DocTimeTableActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Doctor.DoctorDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".DoctorView"
+            android:exported="false" />
+        <activity
+            android:name=".DoctorsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookAppointment"
+            android:exported="false" />
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:exported="true"
+            android:theme="@style/Base.Theme.AppCompat" />
+
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_api" />
+
+        <service
+            android:name=".services.FireNotificationService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+    </application>
+
+</manifest>

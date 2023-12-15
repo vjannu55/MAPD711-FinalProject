@@ -1,0 +1,42 @@
+package com.codescafe.doctorappointment.adapters
+
+import android.content.Intent
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.codescafe.doctorappointment.PatientAppointmentView
+import com.codescafe.doctorappointment.R
+import com.codescafe.doctorappointment.models.AppointmentModel
+
+class AdapterPatientAppointments(private val itemList: ArrayList<AppointmentModel>) :
+    RecyclerView.Adapter<AdapterPatientAppointments.ViewHolder>() {
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val name: TextView = itemView.findViewById(R.id.name)
+        val status: TextView = itemView.findViewById(R.id.status)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_appointment, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item : AppointmentModel = itemList[position]
+        holder.name.text = item.name
+        holder.status.text = item.confirm
+
+        holder.itemView.setOnClickListener{
+            val intent = Intent(holder.itemView.context, PatientAppointmentView::class.java)
+            intent.putExtra("model", item)
+            holder.itemView.context.startActivity(intent)
+        }
+    }
+
+    override fun getItemCount(): Int {
+        return itemList.size
+    }
+}

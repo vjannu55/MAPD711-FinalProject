@@ -1,0 +1,46 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.CodesCafe" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorPrimary</item>
+        <item name="colorSecondaryVariant">@color/colorPrimary</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="dialogTheme">@style/MyDatePickerStyle</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="MyDatePickerStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorPrimary</item>
+        <!--selected Item color-->
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <!-- arrow bordercolor(<>)-->
+        <!--        <item name="android:selectableItemBackgroundBorderless">@color/teal_200</item>-->
+        <!-- Highlight item color-->
+        <!--        <item name="colorControlHighlight">#d50000</item>-->
+        <!--Calender Background color -->
+        <!--        <item name="android:windowBackground">@color/teal_700</item>-->
+        <!-- Ok Cancel Color-->
+        <item name="android:textColor">@color/colorPrimary</item>
+        <!-- Week TextColor-->
+        <!--        <item name="android:textColorSecondary">#E91E63</item>
+                &lt;!&ndash; Calender Number color arrow color (< >) &ndash;&gt;
+                <item name="android:textColorPrimary">#3F51B5</item>
+                &lt;!&ndash;day , month&ndash;&gt;
+                <item name="android:textColorPrimaryInverse">#0ff</item>
+                &lt;!&ndash; year&ndash;&gt;
+                <item name="android:textColorSecondaryInverse">#009688</item>-->
+
+    </style>
+    <style name="BottomSheetDialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/bottomSheetBackground</item>
+    </style>
+
+    <style name="bottomSheetBackground" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/infopage</item>
+    </style>
+</resources>

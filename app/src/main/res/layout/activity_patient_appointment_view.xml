@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_prev"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30sp"
+            android:fontFamily="@font/font_medium"
+            android:gravity="left"
+            android:text="Patient's Receipt"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        <ImageView
+            android:id="@+id/printR"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/logout"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            app:tint="@color/white" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tool_prev">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:ignore="ExtraText,UselessParent">
+                // custom value
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Patient"
+                        android:fontFamily="@font/font_medium"
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Gender"
+                        android:fontFamily="@font/font_medium"
+                        android:gravity="end"
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+                // name and age
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/nameOf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Patient"
+                        android:fontFamily="@font/font_medium"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/ageOf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Gender"
+                        android:gravity="end"
+                        android:fontFamily="@font/font_medium"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+
+                // additional details
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/rounded"
+                    android:layout_margin="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Additional Details"
+                        android:textSize="18sp"
+                        android:layout_marginStart="25dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/font_medium"
+                        android:layout_marginTop="15dp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/descriptionOf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="I'm having fever and cold cough for last
+3 days. Various habitat nisi elementum id."
+                        android:gravity="center|start"
+                        android:fontFamily="@font/font_medium"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="12sp"
+                        android:textSize="18sp"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/datee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="datee"
+                        android:fontFamily="@font/font_medium"
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/timee"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="10:00"
+                        android:fontFamily="@font/font_medium"
+                        android:gravity="end"
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/dte"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date"
+                        android:fontFamily="@font/font_medium"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/tme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Time"
+                        android:gravity="end"
+                        android:fontFamily="@font/font_medium"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="#E6E1E1"/>
+
+                // fee and further
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Doctor Name"
+                        android:fontFamily="@font/font_medium"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/nameDr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Rs. 0"
+                        android:fontFamily="@font/font_medium"
+                        android:gravity="end"
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Appointment Fee"
+                        android:fontFamily="@font/font_medium"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="15dp"
+                        android:textSize="18sp"
+                        tools:ignore="HardcodedText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Doctor Fee - New Patient"
+                            android:fontFamily="@font/font_medium"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/feeOF"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="$CAD 500"
+                            android:fontFamily="@font/font_medium"
+                            android:gravity="end"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="GST / HST"
+                            android:fontFamily="@font/font_medium"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="$CAD  0"
+                            android:fontFamily="@font/font_medium"
+                            android:gravity="end"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Discount"
+                            android:fontFamily="@font/font_medium"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="$CAD  0"
+                            android:fontFamily="@font/font_medium"
+                            android:gravity="end"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Convenience Fee"
+                            android:fontFamily="@font/font_medium"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="$CAD  0"
+                            android:fontFamily="@font/font_medium"
+                            android:gravity="end"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Payment Method"
+                            android:fontFamily="@font/font_medium"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="On Place"
+                            android:fontFamily="@font/font_medium"
+                            android:gravity="end"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gross Total"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/font_medium"
+                            android:textSize="18sp"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/total_fee"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="$CAD  500"
+                            android:fontFamily="@font/font_medium"
+                            android:gravity="end"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+                    //end due
+
+                    <LinearLayout
+                        android:id="@+id/checkme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="25dp"
+                        android:visibility="gone"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginStart="15dp"
+                        android:background="@drawable/rounded"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="* I understand all additional dues
+are valid for hospitality."
+                            android:layout_marginStart="10dp"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/font_medium"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/Cancel"
+                        android:layout_width="220dp"
+                        android:layout_height="55dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:padding="5dp"
+                        android:background="@drawable/btn_round"
+                        android:stateListAnimator="@null"
+                        android:text="Cancel"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="25sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/relativeLayout4"
+                        app:layout_constraintVertical_bias="0.389"
+                        tools:ignore="HardcodedText,SpUsage"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

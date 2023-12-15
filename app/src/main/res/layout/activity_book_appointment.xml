@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/toprounded">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        >
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Patient Details"
+            tools:ignore="HardcodedText"
+            android:layout_gravity="center"
+            android:fontFamily="@font/font_medium"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ScrollView
+        android:layout_below="@id/head"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="ExtraText">
+
+            <EditText
+                android:id="@+id/pa_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:hint="Enter Patient Name"
+                android:background="@drawable/rounded"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:cursorVisible="true"
+                android:textSize="15sp"
+                android:layout_marginTop="25dp"
+                tools:ignore="HardcodedText"
+                android:importantForAutofill="no"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/pa_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:hint="Enter Patient Phone Number"
+                android:background="@drawable/rounded"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:textSize="15sp"
+                android:layout_marginTop="25dp"
+                android:inputType="number"
+                android:maxLength="10"
+                android:importantForAutofill="no"
+                tools:ignore="HardcodedText,TextFields"/>
+
+            <EditText
+                android:id="@+id/pa_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="150dp"
+                android:hint="Enter Patient Age"
+                android:background="@drawable/rounded"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:textSize="15sp"
+                android:layout_marginTop="25dp"
+                tools:ignore="HardcodedText"
+                android:inputType="number"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select date for Appointment"
+                tools:ignore="HardcodedText"
+                android:fontFamily="@font/font_medium"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/date_forAppoint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:hint="Select upcoming for appointment"
+                android:background="@drawable/rounded"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:textSize="15sp"
+                android:layout_marginTop="25dp"
+                android:inputType="number"
+                android:importantForAutofill="no"
+                tools:ignore="HardcodedText,TextFields"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/font_medium"
+                android:text="Select time for Appointment"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/selectedTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/font_medium"
+                android:text="Selected Time"
+                android:layout_gravity="end"
+                android:layout_marginEnd="20dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMondaySlots"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="3"
+                />
+
+            <RelativeLayout
+                android:id="@+id/cardView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="13dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:text="Select Gender"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText"/>
+
+                    <RadioGroup
+                        android:id="@+id/radioGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/male"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_weight="1"
+                            android:text="Male"
+                            android:textColorHighlight="@color/colorPrimary"
+                            android:textSize="20sp"
+                            tools:ignore="HardcodedText"/>
+
+                        <RadioButton
+                            android:id="@+id/female"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_weight="1"
+                            android:text="Female"
+                            android:textColorHighlight="@color/colorPrimary"
+                            android:textSize="20sp"
+                            tools:ignore="HardcodedText"/>
+
+                        <RadioButton
+                            android:id="@+id/other"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_weight="1"
+                            android:text="Other"
+                            android:visibility="gone"
+                            android:textColorHighlight="@color/colorPrimary"
+                            android:textSize="20sp"
+                            tools:ignore="HardcodedText"/>
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            // additional details
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/rounded"
+                android:layout_margin="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Additional Details"
+                    android:textSize="18sp"
+                    android:layout_marginStart="25dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/font_medium"
+                    android:layout_marginTop="15dp"
+                    tools:ignore="HardcodedText"/>
+
+                <EditText
+                    android:id="@+id/descriptionOf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="(e.g, i having fever though)"
+                    android:gravity="center|start"
+                    android:background="@drawable/nobackground"
+                    android:fontFamily="@font/font_medium"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="12sp"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText"
+                    android:inputType="text"
+                    android:importantForAutofill="no" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bookNow"
+                android:layout_width="220dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:background="@drawable/login_bg"
+                android:stateListAnimator="@null"
+                android:text="Confirm Booking"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:layout_marginBottom="10dp"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout4"
+                app:layout_constraintVertical_bias="0.389"
+                tools:ignore="HardcodedText,ObsoleteSdkInt,SpUsage"
+                tools:targetApi="lollipop" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

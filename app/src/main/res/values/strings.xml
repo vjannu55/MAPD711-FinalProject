@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Doctor Appointment</string>
+    <string name="google_maps_api">AIzaSyCxijwW5_f7Zx9-s9C5l0AxjSXE06TCROw</string>
+    <string name="see_all">See All</string>
+    <string name="something_went_wrong">Something went wrong.</string>
+    <string name="fb_cancel">Facebook login cancelled</string>
+    <string name="fb_error">Facebook login failed</string>
+    <string name="google_login">Google login failed</string>
+    <string name="something_went_wrong_net">Something went wrong, Please check internet connection.</string>
+    <string name="oops_connect_your_internet">Oops ! Connect your Internet.</string>
+    <string name="server_down">Unable to reach server.</string>
+    <string name="please_try_again">Please try again.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
